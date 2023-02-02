@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../assets/ubsplogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Helper</title>
+    <link rel="stylesheet" href="../stylesheets/style.css"/>
+  </head>
+  <script>
+    
+    function toggleNav() {
+      var sidebar = document.getElementById("mySidebar");
+      if (sidebar.style.width === "180px") {
+        sidebar.style.width = "0";
+      } else {
+        sidebar.style.width = "180px";
+      }
+    } 
+    
+    function Games() {
+      const originalContent = document.querySelector("#del");
+      const app_container = document.querySelector("#app_container");
+      const chat_container = document.querySelector("#chat_container");
+      var text = document.getElementById("text");
+      var hr1 = document.getElementById("hr1");
+      var home_container = document.getElementById("home_container");
+      var game_container = document.getElementById("game_container");
+
+      var highlight1 = document.getElementById("highlight1");
+      var highlight2 = document.getElementById("highlight2");
+      var highlight3 = document.getElementById("highlight3");
+      var highlight4 = document.getElementById("highlight4");
+
+      highlight1.style.background = ""
+      highlight2.style.background = "#c12a41"
+      highlight3.style.background = ""
+      highlight4.style.background = ""
+
+      document.getElementById("mySidebar").style.width = "0";
+      game_container.style.display = "";
+      home_container.style.display = "none";
+      hr1.style.display = "none";
+      chat_container.style.display = "none";
+      originalContent.style.display = "none";
+      app_container.style.display = "none";
+
+      text.innerHTML = "Games";
+    }
+    
+    function Apps() {
+      const originalContent = document.querySelector("#del");
+      const app_container = document.querySelector("#app_container");
+      const chat_container = document.querySelector("#chat_container");
+      var text = document.getElementById("text");
+      var hr1 = document.getElementById("hr1");
+      var home_container = document.getElementById("home_container");
+      var game_container = document.getElementById("game_container");
+
+      var highlight1 = document.getElementById("highlight1");
+      var highlight2 = document.getElementById("highlight2");
+      var highlight3 = document.getElementById("highlight3");
+      var highlight4 = document.getElementById("highlight4");
+
+      highlight1.style.background = ""
+      highlight2.style.background = ""
+      highlight3.style.background = "#c12a41"
+      highlight4.style.background = ""
+
+      document.getElementById("mySidebar").style.width = "0";
+      game_container.style.display = "none";
+      home_container.style.display = "none";
+      hr1.style.display = "none";
+      chat_container.style.display = "none";
+      originalContent.style.display = "none";
+      app_container.style.display = "";
+      text.innerHTML = "Apps";
+    }
+    
+    function Chat() {
+      const originalContent = document.querySelector("#del");
+      const app_container = document.querySelector("#app_container");
+      const chat_container = document.querySelector("#chat_container");
+      const submitButton = document.querySelector(".submit-button");
+      var text = document.getElementById("text");
+      var hr1 = document.getElementById("hr1");
+      var home_container = document.getElementById("home_container");
+      var game_container = document.getElementById("game_container");
+
+      var highlight1 = document.getElementById("highlight1");
+      var highlight2 = document.getElementById("highlight2");
+      var highlight3 = document.getElementById("highlight3");
+      var highlight4 = document.getElementById("highlight4");
+
+      highlight1.style.background = ""
+      highlight2.style.background = ""
+      highlight3.style.background = ""
+      highlight4.style.background = "#c12a41"
+
+      document.getElementById("mySidebar").style.width = "0";
+      game_container.style.display = "none";
+      home_container.style.display = "none";
+      hr1.style.display = "";
+      chat_container.style.display = "";
+      originalContent.style.display = "";
+      app_container.style.display = "none";
+      text.innerHTML = "Chat";
+    }
+    
+    function Home() {
+      const originalContent = document.querySelector("#del");
+      const app_container = document.querySelector("#app_container");
+      const chat_container = document.querySelector("#chat_container");
+      var text = document.getElementById("text");
+      var hr1 = document.getElementById("hr1");
+      var home_container = document.getElementById("home_container");
+      var game_container = document.getElementById("game_container");
+
+      var highlight1 = document.getElementById("highlight1");
+      var highlight2 = document.getElementById("highlight2");
+      var highlight3 = document.getElementById("highlight3");
+      var highlight4 = document.getElementById("highlight4");
+
+      highlight1.style.background = "#c12a41"
+      highlight2.style.background = ""
+      highlight3.style.background = ""
+      highlight4.style.background = ""
+      
+      document.getElementById("mySidebar").style.width = "0";
+      game_container.style.display = "none";
+      home_container.style.display = "";
+      hr1.style.display = "none";
+      chat_container.style.display = "none";
+      originalContent.style.display = "none";
+      app_container.style.display = "none";
+      text.innerHTML = "Home";
+    }
+    
+    window.onload = function() {
+      if (location.hash === "#home_container") {
+        Home();
+      } else if (location.hash === "#app_container") {
+        Apps();
+      } else if (location.hash === "#chat_container") {
+        Chat();
+      } else if (location.hash === "#game_container") {
+        Games();
+      } else if (location.hash === "") {
+        Home();
+      }
+    };
+
+    window.addEventListener("popstate", function(event) {
+      if (location.hash === "#home_container") {
+        Home();
+      } else if (location.hash === "#app_container") {
+        Apps();
+      } else if (location.hash === "#chat_container") {
+        Chat();
+      } else if (location.hash === "#game_container") {
+        Games();
+      } else if (location.hash === "") {
+        Home();
+      }
+    });
+
+  </script>
+
+  <body>
+    <div id="mySidebar" class="sidebar">
+      <h2 style="margin-top:10px;margin-bottom:10px;">Shock</h2>
+      <hr>
+      <div style="margin-top:px;">
+        <a href="#home_container" id="highlight1" class="menubtn" onclick="Home()">Home</a>    
+        <a href="#game_container" id="highlight2" class="menubtn" onclick="Games()">Games</a>
+        <a href="#app_container" id="highlight3" class="menubtn" onclick="Apps()">Apps</a>
+        <a href="#chat_container" id="highlight4" class="menubtn" onclick="Chat()">Chat</a>
+        <!-- <a id="highlight4" class="menubtn" >Settings</a> -->
+        <a class="menubtn" href="https://discord.gg/99Cp2MWRBf" target="_blank">Discord</a>
+      </div>  
+    </div>
+
+    <div id="tests">
+      <div class="topbar">
+        <a style="margin-top: 10.4px; cursor:pointer; color:#fffafa;margin-left:16px;" class="openbtn" onclick="toggleNav()">☰</a>
+        <h2 id="text" style="margin-top: 20px;margin-bottom: 20px;color:#fffafa;" align="center">Shock</h2>
+        <hr>
+      </div>
+
+      <div id="app_container" style="display: none; color:white;">
+        <div class="gs-library" align="center">
+          <button class="gs-entry" onclick="window.location.href='https://www.youtube.com/'"><img style="border-radius: 5px;" src="../assets/youtube1.png" width="169" height="169"></button>  
+          <a href="../a/reddit"><button><img style="border-radius: 5px;" src="../assets/reddit.png" width="169" height="169"></button></a> 
+          <a href="../a/gfn"><button><img style="border-radius: 5px;" src="../assets/gfn1.png" width="169" height="169"></button></a> 
+          <a href="../a/spotify"><button><img style="border-radius: 5px;" src="../assets/spotify1.png" width="169" height="169"></button></a> 
+          <a href="../a/twitter"><button><img style="border-radius: 5px;" src="../assets/twitter.png" width="169" height="169"></button></a> 
+          <a href="../a/discord"><button><img style="border-radius: 5px;" src="../assets/discord2.png" width="169" height="169"></button></a> 
+          <a href="../a/twitch"><button><img style="border-radius: 5px;" src="../assets/twitch.png" width="169" height="169"></button></a> 
+          <a href="../a/replit"><button><img style="border-radius: 5px;" src="../assets/repl.png" width="169" height="169"></button></a> 
+          <a href="../a/coolmathgames"><button><img style="border-radius: 5px;" src="../assets/cmg.jpg" width="169" height="169"></button></a> 
+          <a href="../a/poki"><button><img style="border-radius: 5px;" src="../assets/poki.png" width="169" height="169"></button></a> 
+          <a href="../a/y8"><button><img style="border-radius: 5px;" src="../assets/y8.png" width="169" height="169"></button></a> 
+        </div>
+      </div>
+      
+      <div id="game_container" style="display: none; color:white;">
+        <div class="gs-library" align="center">
+          <a href="../g/2048"><button><img src="../assets/2048.png" width="169" height="169"></button></a>
+          <a href="../g/chess"><button><img src="../assets/chess.webp" width="169" height="169"></button></a>
+          <a href="../g/chromedino"><button><img src="../assets/dino.webp" width="169" height="169"></button></a>
+          <a href="../g/cookieclicker"><button><img src="../assets/cookieclicker.png" width="169" height="169"></button></a>
+          <a href="../g/fnaw"><button><img src="../assets/fnaw.png" width="169" height="169"></button></a>
+          <a href="../g/fnf"><button><img src="../assets/fnf.png" width="169" height="169"></button></a>
+          <a href="../g/eagler"><button><img src="../assets/minecraft.jpg" width="169" height="169"></button></a>
+          <a href="../g/osu"><button><img src="../assets/osu.png" width="169" height="169"></button></a>
+          <a href="../g/slope"><button><img src="../assets/slope.png" width="169" height="169"></button></a>
+          <a href="../g/snake"><button><img src="../assets/snake.webp" width="169" height="169"></button></a>
+          <a href="../g/tetris"><button><img src="../assets/tetris.png" width="169" height="169"></button></a>
+          <a href="../g/tunnelrush"><button><img src="../assets/tunnelrush.png" width="169" height="169"></button></a>
+          <a href="../g/1v1"><button><img src="../assets/1v1.png" width="169" height="169"></button></a>
+          <a href="../g/agar"><button><img src="../assets/agar.png" width="169" height="169"></button></a>
+          <a href="../g/justfall"><button><img src="../assets/justfall.png" width="169" height="169"></button></a>
+          <a href="../g/krunker"><button><img src="../assets/krunker.png" width="169" height="169"></button></a>
+          <a href="../g/paper"><button><img src="../assets/paper.avif" width="169" height="169"></button></a>
+          <a href="../g/skribbl"><button><img src="../assets/skribbl.webp" width="169" height="169"></button></a>
+          <a href="../g/slither"><button><img src="../assets/slither.png" width="169" height="169"></button></a>
+          <a href="../g/snowball"><button><img src="../assets/snowball.png" width="169" height="169"></button></a>
+          <a href="../g/tetr"><button><img src="../assets/tetr.jpg" width="169" height="169"></button></a>
+          <a href="../g/amogus"><button><img src="../assets/amogus.jpg" width="169" height="169"></button></a>
+          <a href="../g/bowmasters"><button><img src="../assets/bowmasters.png" width="169" height="169"></button></a>
+          <a href="../g/crk"><button><img src="../assets/crk.png" width="169" height="169"></button></a>
+          <a href="../g/flappybird"><button><img src="../assets/flappybird.png" width="169" height="169"></button></a>
+          <a href="../g/geometrydash"><button><img src="../assets/geometry.png" width="169" height="169"></button></a>
+          <a href="../g/retrobowl"><button><img src="../assets/retrobowl.avif" width="169" height="169"></button></a>
+          <a href="../g/roblox"><button><img src="../assets/rawblocks.png" width="169" height="169"></button></a>
+          <a href="../g/subway"><button><img src="../assets/subway.webp" width="169" height="169"></button></a>
+          <a href="../g/pacman"><button><img src="../assets/pacman.png" width="169" height="169"></button></a>
+          <a href="../g/emerald"><button><img src="../assets/poke-emerald.jpg" width="169" height="169"></button></a>
+          <a href="../g/firered"><button><img src="../assets/poke-fire-red.jpg" width="169" height="169"></button></a>
+          <a href="../g/leafgreen"><button><img src="../assets/poke-leaf-green.jpg" width="169" height="169"></button></a>
+          <a href="../g/ruby"><button><img src="../assets/poke-ruby.jpg" width="169" height="169"></button></a>
+          <a href="../g/sapphire"><button><img src="../assets/poke-sapphire.jpg" width="169" height="169"></button></a> 
+          <a href="../g/flash/?swf=bloonstd1.swf"><button><img src="../assets/btd.png" width="169" height="169"></button></a>
+          <a href="../g/flash/?swf=bloonstd3.swf"><button><img src="../assets/btd3.jpg" width="169" height="169"></button></a>
+          <a href="../g/flash/?swf=bloonstd4.swf"><button><img src="../assets/btd4.jpg" width="169" height="169"></button></a>
+          <a href="../g/flash/?swf=bloonstd5.swf"><button><img src="../assets/btd5.webp" width="169" height="169"></button></a>
+          <a href="../g/flash/?swf=bobtherobber.swf"><button><img src="../assets/bob.jpg" width="169" height="169"></button></a>
+          <a href="../g/flash/?swf=ducklife.swf"><button><img src="../assets/duck.avif" width="169" height="169"></button></a>
+          <a href="../g/flash/?swf=ducklife2.swf"><button><img src="../assets/duck2.avif" width="169" height="169"></button></a>
+          <a href="../g/flash/?swf=ducklife3.swf"><button><img src="../assets/duck3.avif" width="169" height="169"></button></a>
+          <a href="../g/flash/?swf=ducklife3.swf"><button><img src="../assets/duck4.avif" width="169" height="169"></button></a>
+          <a href="../g/fbwg"><button><img src="../assets/fbwg.jpg" width="169" height="169"></button></a>
+          <a href="../g/run3"><button><img src="../assets/run3.avif" width="169" height="169"></button></a>
+        </div>
+      </div>
+
+      <div style="padding-top: 100px; display: none;" align="center" id="home_container">
+        <img class="logo" src="../assets/ubsp2-icon.png" alt="" />
+        <h1 style="color: white;" align="center">Shock</h1>
+        
+          <form id="dif">
+            <input id="dif2" placeholder="Search..." type="text" autocomplete="off" ></input>
+            <button style="height: 30px; margin: auto;" type="submit"><img src="assets/send.svg" alt="send" />
+          </form>  
+      </div>
+
+      <div style="display: none;" id="chat_container"></div>
+
+      <div class="betterF">
+        <hr style="display: none; width: 100%;" id="hr1">
+        <form style="display: none; height: auto;" id="del">
+          <textarea id="textareaId" class="expanding-area"  name="prompt" rows="1" cols="1" placeholder="Ask Shock..." autocomplete="off" resize="none"></textarea>
+          <button style="height: 30px; margin: auto;" id="submitBtn"  type="submit"><img src="assets/send.svg" alt="send" />
+        </form>
+      </div>
+      
+    </div>
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script src="index.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
+
+<!-- Notes
+1. Make it so they cant send when it has just spaces of no text
+2. Make it so they cant send when the bot is writing
+3. Make the rest of the menu
+4. Make the form look cleaner 
+5. Implament the proxy engine
+6. Fix the app position
+7. Then you're GOATED
+
+Optional Features
+1. In the ai chat add either suggestion searches like ChatGPT or a logo that disapears after you send your first message
+2. Add a settings system that ACTUALLY WORKS-->
+

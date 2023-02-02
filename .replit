@@ -1,0 +1,4 @@
+language = "nodejs"
+# run = "npx nodemon -x 'node ./main.sh || touch ./main.sh'"
+run = "./main.sh"
+onBoot = "chmod u+x main.sh"
